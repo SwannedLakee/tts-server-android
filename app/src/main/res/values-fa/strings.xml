@@ -124,14 +124,16 @@
     <string name="pref_title_global_edge">رابط Global-Edge</string>
     <string name="systts_multi_voice_option">چندصدایی (روایت/گفتگو)</string>
     <string name="systts_use_internal_audio_player">از پخش کننده داخلی استفاده کنید</string>
-    <string name="systts_in_app_play_info_html">&lt;DATA&gt;<![CDATA[        پس از روشن کردن این گزینه، پخش کننده صوتی تعبیه شده در این برنامه به جای پخش شدن توسط مؤلفه TTS سیستم <b>مستقیماً</b> استفاده می شود.
+    <string name="systts_in_app_play_info_html"><DATA><![CDATA[
+        پس از روشن کردن این گزینه، پخش کننده صوتی تعبیه شده در این برنامه به جای پخش شدن توسط مؤلفه TTS سیستم <b>مستقیماً</b> استفاده می شود.
         <br>از آنجایی که نیازی به رمزگشایی دستی نیست و نرخ نمونه‌برداری را نیز می‌توان در حین پخش تغییر داد، می‌تواند مشکل پخش غیرعادی <b>صداهای متعدد با نرخ نمونه‌برداری متفاوت</b> و <b>وب را حل کند. قالب</b>در برخی از دستگاه ها.
         <br><br>البته پخش مستقیم مشکلات سازگاری نیز دارد:
         <br> - از آنجایی که صدای اصلی به کامپوننت TTS سیستم ارسال نمی شود، اگر تماس گیرنده TTS ابتدا کش و سپس مکانیزم را پخش کند، یعنی توسط سیستم پخش نشود، باعث خالی شدن صدا و خالی شدن صدا می شود. به طور غیرمنتظره ای در حین کش پخش شد.
         <br> - فرمت خام هنوز پشتیبانی نمی شود و توسط سیستم پخش می شود.
         <br> - عملکرد کمی کمتر از پخش سیستم است.
         <br> - از آنجایی که پخش کننده داخلی دارای بافر صوتی نیست، پخش سیستم <b> کندتر از فاصله بین <b>بند</b> و <b> جمله خواهد بود (اگر تقسیم جملات طولانی فعال باشد) </b> >صدها میلی ثانیه تاخیر بیشتر</b>.
-        ]]>    &lt;/DATA&gt;</string>
+        ]]>
+    </DATA></string>
     <string name="systts_help_secondary_locale">زبان سطح دوم را انتخاب کنید، یعنی هنگام خواندن با صدای بلند از این زبان استفاده کنید.در حال حاضر، مایکروسافت فقط از en-US-JennyMultilingualNeural پشتیبانی می کند.</string>
     <string name="systts_sample_rate">نرخ نمونه برداری (هرتز)</string>
     <string name="systts_secondaryLocale">زبان متوسطه (مهارت های زبانی)</string>
@@ -440,4 +442,6 @@
     <string name="write_plugin_log_to_file">لاگ افزونه را در فایل بنویسید</string>
     <string name="add_shortcut_if_fail_tips">اگر ناموفق بود، لطفاً [اضافه کردن مجوز میانبر] را بدهید</string>
     <string name="clear_text_content">محتوای متن را پاک کنید</string>
+    <string name="exclude_from_recent">后台隐藏</string>
+    <string name="exclude_from_recent_summary">在[最近任务]中隐藏本应用</string>
 </resources>
