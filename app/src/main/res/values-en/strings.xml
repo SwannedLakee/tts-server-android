@@ -192,7 +192,7 @@
     <string name="file">File</string>
     <string name="select_file">Select the file</string>
     <string name="select_file_hint">Click the button on the right to select the file➡️</string>
-    <string name="systts_group_empty_msg">Click the ➕ button on the right side of the top application bar -> Add TTS, and set the group to which it belongs in the editing interface.</string>
+    <string name="systts_group_empty_msg">Click the ➕ button on the right side of the top application bar -&gt; Add TTS, and set the group to which it belongs in the editing interface.</string>
     <string name="new_version_available">New version available：%1$s</string>
     <string name="master_switch">Master switch</string>
     <string name="upload_to_url">Upload to URL</string>
@@ -434,4 +434,6 @@
     <string name="write_plugin_log_to_file">Write plugin log to file</string>
     <string name="add_shortcut_if_fail_tips">If that fails, grant the Add Shortcut permission</string>
     <string name="clear_text_content">Clear the text</string>
+    <string name="exclude_from_recent">后台隐藏</string>
+    <string name="exclude_from_recent_summary">在[最近任务]中隐藏本应用</string>
 </resources>
