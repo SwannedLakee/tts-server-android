@@ -182,7 +182,7 @@
     <string name="file">文件</string>
     <string name="select_file">選擇檔案</string>
     <string name="select_file_hint">按一下右側按鈕選擇檔案 ➡️</string>
-    <string name="systts_group_empty_msg">按一下頂部應用欄右側的 ➕ 按鈕->添加TTS，然後在編輯介面設定所屬群組。</string>
+    <string name="systts_group_empty_msg">按一下頂部應用欄右側的 ➕ 按鈕-&gt;添加TTS，然後在編輯介面設定所屬群組。</string>
     <string name="new_version_available">有新版本：%1$s</string>
     <string name="master_switch">總開關</string>
     <string name="upload_to_url">上傳到URL</string>
@@ -424,4 +424,6 @@
     <string name="write_plugin_log_to_file">写入插件日志到文件</string>
     <string name="add_shortcut_if_fail_tips">如果失败，请授予【添加快捷方式权限】</string>
     <string name="clear_text_content">清空文本内容</string>
+    <string name="exclude_from_recent">后台隐藏</string>
+    <string name="exclude_from_recent_summary">在[最近任务]中隐藏本应用</string>
 </resources>
