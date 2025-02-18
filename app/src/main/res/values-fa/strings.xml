@@ -110,13 +110,13 @@
     <!-- 系统TTS 设置 -->
     <string name="systts_set_dialogue_min_match_word_count">حداقل تعداد حروف چینی منطبق را در گفتگو تنظیم کنید</string>
     <string name="systts_set_dialogue_min_info">تعداد حروف چینی در دیالوگ کاراکترها (شامل نمادهای چینی) یعنی فقط در صورتی که بیشتر یا مساوی این مقدار باشد به صورت دیالوگ خوانده می شود و در غیر این صورت از نریشن استفاده می شود.</string>
-    <string name="request_timeout">زمان درخواست را تنظیم کنید</string>
+    <string name="request_timeout">请求超时</string>
     <string name="request_timeout_summary">پس از اینکه زمان انتظار برای درخواست صدا از مقدار تعیین شده فراتر رفت، درخواست لغو شده و به طور خودکار مجددا امتحان می شود.</string>
     <string name="systts_http_edit_title">موتور سفارشی را ویرایش کنید</string>
     <string name="systts_http_request_header">هدر درخواست</string>
     <string name="systts_sample_test_text">برای تست و بازی روی دکمه سمت راست کلیک کنید</string>
     <string name="systts_decode_audio">رمزگشایی صدا</string>
-    <string name="systts_add_internal_tts">موتور داخلی را اضافه کنید</string>
+    <string name="systts_add_ms_tts">添加内置TTS</string>
     <string name="systts_add_custom_tts">موتور سفارشی را اضافه کنید</string>
     <string name="off_multi_voice_use_global">لطفاً گزینه چند صدایی را برای استفاده از حالت تک صدایی خاموش کنید</string>
     <string name="use_dns_lookup_ip">از DNS برای حل IP رابط استفاده کنید</string>
@@ -229,7 +229,6 @@
     <string name="systts_local_test_msg">پخش مستقیم بسته است
 اندازه: %1$d کیلوبایت
 نرخ نمونه برداری: %2$d هرتز</string>
-    <string name="systts_set_standby">موتور پشتیبان را تنظیم کنید</string>
     <string name="systts_local_params_int_must">باید درست یا 1، نادرست یا 0 باشد</string>
     <string name="internal_player">پخش کننده داخلی</string>
     <string name="built_in_player_not_enabled">⚠️پخش داخلی فعال نیست، لطفا به منوی گوشه سمت راست بالا بروید تا به صورت دستی فعال شود.</string>
@@ -354,7 +353,7 @@
     <string name="import_file_as">درونریزی فایل به عنوان…</string>
     <string name="systts_no_speech_target_all">⚠️ {Read All} وجود ندارد، از پیش‌فرض استفاده کنید! حتما گزینه چند صدایی را روشن کنید.</string>
     <string name="stream_audio_mode">پخش جریانی صدا</string>
-    <string name="stream_audio_mode_summary">یعنی پخش در حین دانلود که مستلزم پایداری شبکه بالاست. (بعد از فعال شدن، امتحان مجدد خودکار شکست / پشتیبان گیری TTS امکان پذیر نخواهد بود)</string>
+    <string name="stream_audio_mode_summary">即边下边播，对网络稳定性要求高。</string>
     <string name="use_exo_decoder">استفاده از رمزگشای ExoPlayer</string>
     <string name="use_exo_decoder_summary">ExoPlayer یک مدیا پلیر است که توسط گوگل توسعه یافته و سازگاری بالاتری دارد. پس از روشن شدن، رسیور داخلی آن مستقیماً برای رمزگشایی صدا استفاده می شود.</string>
     <string name="plugin_not_define_vars">این افزونه هیچ متغیر تعریف شده ای ندارد</string>
@@ -444,4 +443,20 @@
     <string name="clear_text_content">محتوای متن را پاک کنید</string>
     <string name="exclude_from_recent">后台隐藏</string>
     <string name="exclude_from_recent_summary">在[最近任务]中隐藏本应用</string>
+    <string name="not_support_audition">⚠️ 不支持试听！</string>
+    <string name="systts_log_direct_play">直接播放：%1$s</string>
+    <string name="format_code">格式化</string>
+    <string name="undo">撤销</string>
+    <string name="redo">重做</string>
+    <string name="config_empty_error">无可用的TTS配置，请检查是否启用。</string>
+    <string name="silent_audio">快节奏播放</string>
+    <string name="silent_audio_summary">去除音频中的静音、停顿部分</string>
+    <string name="loading_audio_stream">加载流：%1$s</string>
+    <string name="audio_decoding_error">解码错误：%1$s</string>
+    <string name="audio_source_error">源错误：%1$s</string>
+    <string name="stream_handle_error">流错误：%1$s</string>
+    <string name="use_standby_tts">使用备用TTS：%1$s</string>
+    <string name="reach_retry_limit">到达重试上限，跳过！</string>
+    <string name="migration_data">迁移数据</string>
+    <string name="systts_list_migration_desc">列表数据需要迁移到新的表结构。\n数据无价，谨防丢失，请先手动导出旧数据。</string>
 </resources>
