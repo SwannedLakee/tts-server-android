@@ -295,7 +295,7 @@
     <string name="edit_read_rule">編輯朗讀規則</string>
     <string name="speech_rule_manager">朗讀規則管理</string>
     <string name="speech_rule_script">規則指令碼</string>
-    <string name="empty_list">列表為空</string>
+    <string name="empty_list">空空如也</string>
     <string name="max_retry_count">最大重試次數</string>
     <string name="sys_doc_picker_error">開啟系統檔案選擇器失敗，自動使用內建選擇器。</string>
     <string name="add_file">新增檔案</string>
