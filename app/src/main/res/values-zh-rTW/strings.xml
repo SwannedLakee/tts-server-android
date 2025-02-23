@@ -452,5 +452,5 @@
     <string name="clear_cache_ok">清除成功</string>
     <string name="login">登入</string>
     <string name="reload">重新載入</string>
-    <string name="current_playing_bgm">当前背景音乐：%1$s</string>
+    <string name="current_playing_bgm">當前背景音樂：%1$s</string>
 </resources>
