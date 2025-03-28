@@ -56,11 +56,11 @@
     <string name="server_listen_address_local">監聽地址：%s</string>
     <string name="server_please_start_service">請先啟動服務</string>
     <string name="server_restart_service_to_update">重啟服務以生效</string>
-    <string name="server_set_token">設置Token</string>
+    <string name="server_set_token">設定Token</string>
     <string name="server_token_set_to">Token已設為：</string>
     <string name="system_tts">系統TTS</string>
-    <string name="settings">設置</string>
-    <string name="global_settings">全局設置</string>
+    <string name="settings">設定</string>
+    <string name="global_settings">全域性設定</string>
     <string name="copy_address">複製地址</string>
     <string name="check_update_failed">檢查更新失敗</string>
     <string name="current_is_last_version">當前已是最新版</string>
@@ -124,7 +124,16 @@
     <string name="pref_title_global_edge">全域：Edge介面</string>
     <string name="systts_multi_voice_option">多語音（旁白/對白）</string>
     <string name="systts_use_internal_audio_player">使用內置播放器</string>
-    <string name="systts_in_app_play_info_html">&lt;DATA&gt;<![CDATA[打開此選項後，將直接<b>使用本程式內置的音訊播放器</b>，而非轉由系統TTS組件播放。]]>&lt;/DATA&gt;
+    <string name="systts_in_app_play_info_html"><DATA><![CDATA[
+        打開此選項後，將直接<b>使用本程序內置的音頻播放器</b>，而非轉由系統TTS組件播放。
+        <br>由於無需手動解碼，且採樣率也可在播放中變更，可解決<b>多語音採樣率不同時</b>和<b>部分設備的webm格式</b>播放異常問題。
+        <br><br>當然，直接播放也有兼容性問題：
+        <br> - 由於並未將原始音頻發送到系統TTS組件，所以如果調用TTS者是先緩存後播放機制，即並非由系統播放時，這將會導致緩存時音頻爲空和意外播放。
+        <br> - raw格式依舊不支持，由系統播放。
+        <br> - 性能方面相較系統播放略低。
+        <br> - 由於內置播放器無音頻緩衝，故<b>段落</b>與<b>句子(如已啓用分割長句)</b>之間的間隔時間相較系統播放會<b>多出幾百毫秒的延遲</b>。
+        ]]>
+    </DATA>
     </string>
     <string name="systts_help_secondary_locale">選擇二級語言，即在朗讀時使用此語言，現時微軟只支持en-US-JennyMultilingualNeural。</string>
     <string name="systts_sample_rate">取樣速率（hz）</string>
@@ -139,7 +148,8 @@
     <string name="systts_test_success_info">音频大小: %1$s \n音频采样率：%2$d \n音频格式: %3$s</string>
     <string name="systts_http_test_msg">音訊大小：%1$d Kib \n格式：%2$s \n取樣速率：%3$d HZ \nContent-Type:%4$s</string>
     <string name="systts_please_check_multi_voice_option">請先在右上角選單勾選多語音選項！</string>
-    <string name="systts_sample_rate_different_in_enabled_list">檢測到已啟用配置中的格式/取樣速率不同，</string>
+    <string name="systts_sample_rate_different_in_enabled_list">檢測到已啓用配置中的格式/採樣率不同，
+        這將會導致音調異常(聲音粗重或尖細)，請手動換爲相同格式/採樣率或在右上角將【使用內置播放器】選項打開。</string>
     <string name="group_expanded">已展開 %1$s</string>
     <string name="group_collapsed">已收合 %1$s</string>
     <string name="systts_desc_list_count_info">共%1$d項，已啟用%2$d項</string>
@@ -224,7 +234,7 @@
     <string name="systts_log_replace_failed">執行替換失敗：%1$s</string>
     <string name="systts_standby_triggered_retry_index">備用配置使用條件</string>
     <string name="systts_standby_triggered_retry_index_summary">備用配置在第幾次重試時觸發？ 預設為1，即備用配置在首次失敗重試時使用。</string>
-    <string name="systts_ms_webm_warn_msg">⚠️ 經測試，音訊格式webm..- 24kbps-.. 的實際所耗流量是其它音訊大小的三倍多，不推薦使用！</string>
+    <string name="systts_ms_webm_warn_msg">⚠ 經測試，音訊格式webm..- 24kbps-.. 的實際所耗流量是其它音訊大小的三倍多，不推薦使用！</string>
     <string name="search_filter">搜索過濾</string>
     <string name="follow_system">跟隨系統</string>
     <string name="app_language_desc">程式語言：%1$s</string>
@@ -462,5 +472,5 @@
     <string name="open_ra_tag_options">開啟標籤資料選項</string>
     <string name="quick_edit">快捷編輯</string>
     <string name="switch_tag">切換標籤</string>
-    <string name="get_tag_name_failed">获取标签名失败</string>
+    <string name="get_tag_name_failed">獲取標籤名失敗</string>
 </resources>
