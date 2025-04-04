@@ -72,10 +72,12 @@ import io.github.oshai.kotlinlogging.KotlinLogging
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
+import kotlinx.coroutines.awaitCancellation
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import splitties.init.appCtx
+import splitties.systemservices.notificationManager
 import java.nio.ByteBuffer
 import java.util.Locale
 import kotlin.jvm.Throws
@@ -370,6 +372,7 @@ class SystemTtsService : TextToSpeechService(), IEventDispatcher {
                             // eventListener already handled
                             // handleTextProcessorError(it.err)
                             callback.error(TextToSpeech.ERROR_SYNTHESIS)
+                            awaitCancellation()
                         }
 
                         is SynthesisError.PresetMissing -> {
@@ -417,7 +420,6 @@ class SystemTtsService : TextToSpeechService(), IEventDispatcher {
     }
 
     private var mNotificationBuilder: Notification.Builder? = null
-    private lateinit var mNotificationManager: NotificationManager
 
     // 通知是否显示中
     private var mNotificationDisplayed = false
@@ -433,9 +435,8 @@ class SystemTtsService : TextToSpeechService(), IEventDispatcher {
                 )
                 chan.lightColor = Color.CYAN
                 chan.lockscreenVisibility = Notification.VISIBILITY_PRIVATE
-                mNotificationManager =
-                    getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-                mNotificationManager.createNotificationChannel(chan)
+
+                notificationManager.createNotificationChannel(chan)
             }
             val notifi = getNotification()
 
@@ -713,6 +714,8 @@ class SystemTtsService : TextToSpeechService(), IEventDispatcher {
                 }
 
             }
+
+            TextProcessorError.Initialization -> logE(getString(R.string.text_processor_init_failed))
         }
     }
 
