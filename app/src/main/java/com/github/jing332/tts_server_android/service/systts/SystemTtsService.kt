@@ -26,6 +26,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.app.ServiceCompat.stopForeground
 import androidx.core.content.ContextCompat
+import com.github.jing332.common.utils.StringUtils
 import com.github.jing332.common.utils.limitLength
 import com.github.jing332.common.utils.longToast
 import com.github.jing332.common.utils.registerGlobalReceiver
@@ -330,7 +331,7 @@ class SystemTtsService : TextToSpeechService(), IEventDispatcher {
         mTtsManager?.context?.cfg?.bgmEnabled = { enabledBgm }
 
         runBlocking {
-            // If the voiceName is not empty, get the configuration ID from the voiceName.
+             // If the voiceName is not empty, get the configuration ID from the voiceName.
             var cfgId: Long? = getConfigIdFromVoiceName(request.voiceName ?: "").onFailure {
                 longToast(R.string.voice_name_bad_format)
                 callback.error(TextToSpeech.ERROR_INVALID_REQUEST)
@@ -368,7 +369,7 @@ class SystemTtsService : TextToSpeechService(), IEventDispatcher {
                         is SynthesisError.TextHandle -> {
                             // eventListener already handled
                             // handleTextProcessorError(it.err)
-                            callback.error(TextToSpeech.ERROR_INVALID_REQUEST)
+                            callback.error(TextToSpeech.ERROR_SYNTHESIS)
                         }
 
                         is SynthesisError.PresetMissing -> {
@@ -377,11 +378,11 @@ class SystemTtsService : TextToSpeechService(), IEventDispatcher {
                             callback.error(TextToSpeech.ERROR_INVALID_REQUEST)
                         }
                     }
-                    callback.done()
+//                    callback.done()
                 }
             }
-            synthesizerJob?.join()
 
+            synthesizerJob?.join()
         }
 
 
@@ -702,12 +703,16 @@ class SystemTtsService : TextToSpeechService(), IEventDispatcher {
                 logE(str)
             }
 
-            is TextProcessorError.MissingRule -> logE(
+            is TextProcessorError.MissingRule -> {
                 getString(
                     R.string.missing_speech_rule,
-                    err.id
-                )
-            )
+                    err.id.ifBlank { getString(R.string.none) }
+                ).let {
+                    logE(it)
+                    longToast(StringUtils.WARNING_EMOJI + " " + it)
+                }
+
+            }
         }
     }
 
