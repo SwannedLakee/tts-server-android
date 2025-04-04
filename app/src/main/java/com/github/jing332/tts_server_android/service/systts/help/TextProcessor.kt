@@ -23,8 +23,7 @@ class TextProcessor : ITextProcessor {
         private val logger = KotlinLogging.logger { this::class.java.name }
     }
 
-    private val isMultiVoice: Boolean
-        get() = SystemTtsConfig.isMultiVoiceEnabled.value
+    private var isMultiVoice: Boolean = false
 
     private val isSplitSentence: Boolean
         get() = SystemTtsConfig.isSplitEnabled.value
@@ -43,14 +42,12 @@ class TextProcessor : ITextProcessor {
         context: Context,
         configs: Map<Long, TtsConfiguration>,
     ): Result<Unit, TextProcessorError> {
+        isMultiVoice = SystemTtsConfig.isMultiVoiceEnabled.value
         if (isMultiVoice) {
             val ruleId = configs.values.toList().component1().speechInfo.tagRuleId
             val speechRule =
-                dbm.speechRuleDao.getByRuleId(ruleId) ?: return Err(
-                    TextProcessorError.MissingRule(
-                        ruleId
-                    )
-                )
+                dbm.speechRuleDao.getByRuleId(ruleId)
+                    ?: return Err(TextProcessorError.MissingRule(ruleId))
             engine = SpeechRuleEngine(context, speechRule).apply { eval() }
             this.configs =
                 configs.entries.map { it.value.copy(speechInfo = it.value.speechInfo.copy(configId = it.key)) }
